@@ -4,30 +4,58 @@
 Simulate an SMB brute force attack to gain initial access to a target system.
 
 ## Lab Environment
-- Kali Linux attacker machine
-- Windows target host
-- SMB service exposed on the target
+- Kali Linux attacker machine  
+- Windows target host  
+- SMB service exposed on the target  
 
 ## Attack Overview
-This project demonstrates how exposed SMB services and weak credentials can be used to gain unauthorized access to a system.
+This project demonstrates how exposed SMB services and weak credentials can be exploited to gain unauthorized access to a system.
+
+The attack path included:
+- Identifying SMB on the target
+- Enumerating the service
+- Performing a brute force attack against authentication
+- Gaining access using valid credentials
 
 ## Reconnaissance
-Identified SMB service running on the target using network scanning.
+Initial network scanning identified SMB (port 445) as an exposed service on the target system.
 
 ## Enumeration
-Enumerated SMB to identify access points and prepare for authentication attacks.
+The SMB service was reviewed to identify available access points and prepare for authentication attacks.
 
 ## Exploitation
-Executed a brute force attack against SMB authentication and obtained valid credentials, allowing access to the system.
+A brute force attack was launched against SMB authentication using a password wordlist. Valid credentials were successfully identified, allowing authenticated access to the system.
 
 ## Evidence
-(Add screenshots here)
+
+### SMB Service Detection
+![SMB Scan](images/recon.png)
+
+### Brute Force Attack in Progress
+![Hydra Attack](images/hydra_attack.png)
+
+### Successful Credential Discovery
+![Hydra Success](images/hydra_success.png)
+
+The brute force attack successfully identified valid credentials for the Administrator account, allowing authenticated access to the target system.
+
+### Credential Validation (Elastic SIEM)
+![Credential Logs](images/credential_validation.png)
 
 ## Key Findings
-- Weak passwords can lead directly to system compromise
-- SMB is a high-value target in internal environments
+- Weak passwords can lead directly to system compromise  
+- SMB services are a common and high-value attack surface  
+- Credential-based attacks remain highly effective in poorly secured environments  
 
 ## Tools Used
-- Nmap
-- Hydra
-- SMB tools
+- Nmap  
+- Hydra  
+- SMB client tools  
+- Kali Linux  
+
+## Skills Demonstrated
+- Network reconnaissance  
+- Service enumeration  
+- Credential brute force attacks  
+- Initial access techniques  
+- Understanding of attack visibility in SIEM 
