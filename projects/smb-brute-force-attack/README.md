@@ -1,5 +1,7 @@
 # SMB Brute Force Attack – Initial Access
 
+This project simulates a real-world initial access scenario where weak SMB credentials are exploited to gain unauthorized access to a target system.
+
 ## Objective
 Simulate an SMB brute force attack to gain initial access to a target system.
 
@@ -24,7 +26,7 @@ Initial network scanning identified SMB (port 445) as an exposed service on the 
 The SMB service was reviewed to identify available access points and prepare for authentication attacks.
 
 ## Exploitation
-A brute force attack was launched against SMB authentication using a password wordlist. Valid credentials were successfully identified, allowing authenticated access to the system.
+A brute force attack was executed against the SMB service using a password wordlist. The attack successfully identified valid credentials for the Administrator account, demonstrating how weak password policies can lead directly to system compromise.
 
 ## Evidence
 
@@ -59,3 +61,6 @@ The brute force attack successfully identified valid credentials for the Adminis
 - Credential brute force attacks  
 - Initial access techniques  
 - Understanding of attack visibility in SIEM 
+
+## Impact
+Successful credential compromise provided authenticated access to the target system, representing a critical initial foothold that could be used for further lateral movement and privilege escalation.
