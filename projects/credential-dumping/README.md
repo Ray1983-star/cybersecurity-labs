@@ -36,7 +36,7 @@ This represents a critical post-exploitation phase where attackers gain access t
 ## Evidence
 
 ### Credential Dump Output
-![Credential Dump](images/credential_dump.png)
+![Credential Dump](images/Secretsdump.png)
 
 Credential data was successfully extracted from the system, including user accounts and NTLM password hashes.
 
