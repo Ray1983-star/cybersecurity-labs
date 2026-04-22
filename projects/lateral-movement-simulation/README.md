@@ -16,8 +16,8 @@ Following initial access via SMB brute force, valid credentials were used to mov
 ## Attack Workflow
 - Initial access obtained via SMB brute force  
 - Valid credentials identified  
-- Credentials reused to authenticate to another system  
-- Successful access to additional resources achieved  
+- Credentials reused to authenticate to additional systems  
+- Remote execution performed across multiple hosts  
 
 ## Lateral Movement Techniques
 - SMB authentication  
@@ -26,7 +26,10 @@ Following initial access via SMB brute force, valid credentials were used to mov
 
 ## Evidence
 
-(Add screenshots here)
+### Remote Execution Using Compromised Credentials
+![Remote Execution](images/remote_execution.png)
+
+Compromised Administrator credentials were reused to authenticate across multiple systems, successfully executing remote actions and confirming lateral movement within the network.
 
 ## Key Findings
 - Credential reuse enables rapid network compromise  
@@ -34,15 +37,15 @@ Following initial access via SMB brute force, valid credentials were used to mov
 - Valid accounts are one of the most powerful attacker tools  
 
 ## Tools Used
+- NetExec (nxc)  
 - SMB tools  
-- PsExec / WMIC (if used)  
 - Kali Linux  
 
 ## Skills Demonstrated
 - Post-exploitation techniques  
 - Lateral movement  
 - Credential abuse  
-- Network navigation  
+- Remote execution  
 
 ## Impact
-Compromised credentials enabled movement across systems, demonstrating how a single point of failure can lead to broader network compromise.
+Compromised credentials enabled movement across multiple systems, demonstrating how a single point of failure can lead to widespread network compromise.
