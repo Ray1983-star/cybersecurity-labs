@@ -1,6 +1,6 @@
 # 📁 Cybersecurity Projects Portfolio
 
-A collection of hands-on cybersecurity projects demonstrating offensive security techniques, detection engineering, and SIEM-based analysis.
+A collection of hands-on offensive security projects demonstrating initial access, post-exploitation, privilege escalation, and supporting detection analysis.
 
 Each project simulates real-world attack scenarios and includes methodology, tools used, and detection insights.
 
