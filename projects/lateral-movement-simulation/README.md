@@ -29,7 +29,7 @@ Following initial access via SMB brute force, valid credentials were used to mov
 ### Remote Execution Using Compromised Credentials
 ![Remote Execution](images/remote_execution.png)
 
-Compromised Administrator credentials were reused to authenticate across multiple systems, successfully executing remote actions and confirming lateral movement within the network.
+Compromised Administrator credentials were reused to authenticate and execute commands across multiple hosts, confirming successful lateral movement within the network.
 
 ## Key Findings
 - Credential reuse enables rapid network compromise  
