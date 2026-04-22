@@ -1,50 +1,54 @@
 # Privilege Escalation & Domain Compromise
 
 ## Objective
-Escalate privileges within a compromised environment and obtain domain-level access using credential extraction and post-exploitation techniques.
+Escalate privileges within a compromised environment and obtain full control of a target system using credential abuse and post-exploitation techniques.
 
 ## Lab Environment
 - Kali Linux attacker machine
-- Windows Domain environment
-- Domain-joined systems
+- Windows Server (Domain-joined)
+- SMB enabled systems
 - Compromised Administrator credentials
 
 ## Overview
-Following successful lateral movement, additional techniques were used to extract credentials and escalate privileges, ultimately leading to domain-level compromise.
+Following successful lateral movement, compromised credentials were leveraged to execute commands remotely and escalate privileges on target systems. This demonstrates how attackers can transition from initial access to full system control without exploiting software vulnerabilities.
 
 ## Attack Workflow
-- Initial access and lateral movement completed
-- Credentials harvested from compromised systems
-- Privilege escalation techniques executed
-- Domain-level access achieved
+- Initial access obtained via SMB brute force
+- Lateral movement achieved using valid credentials
+- Administrative access confirmed across systems
+- Remote execution performed using authenticated sessions
+- Privilege escalation achieved to SYSTEM level
 
 ## Techniques Used
-- Credential dumping
-- Privilege escalation
-- Token/credential abuse
+- SMB authentication
+- Credential reuse
+- Remote command execution
+- Privilege escalation via administrative access
 
 ## Evidence
 
-### Credential Dumping / Privilege Escalation
-![Privilege Escalation](images/priv_esc.png)
+### Privilege Escalation to SYSTEM
+![Privilege Escalation](images/system-shell.png)
 
-Compromised credentials were extracted from memory and reused to escalate privileges, enabling full control over domain resources.
+Administrative credentials were used to execute commands remotely, resulting in SYSTEM-level access on the target machine. This confirms successful privilege escalation and full control over the compromised host.
 
 ## Key Findings
-- Credential storage in memory presents a major risk
-- Privilege escalation can occur without exploits
-- Domain compromise can follow quickly after initial access
+- Valid credentials eliminate the need for exploits
+- Administrative access can quickly lead to SYSTEM-level control
+- Privilege escalation significantly accelerates attacker impact
+- Credential abuse remains one of the most effective attack techniques
 
 ## Tools Used
-- Mimikatz / alternative
 - NetExec (nxc)
+- Impacket (psexec, secretsdump)
 - Kali Linux
 
 ## Skills Demonstrated
 - Privilege escalation
-- Credential extraction
-- Post-exploitation
-- Domain compromise techniques
+- Credential abuse
+- Remote execution
+- Post-exploitation techniques
+- Attack chaining across systems
 
 ## Impact
-Privilege escalation enabled full domain compromise, demonstrating how attackers can gain complete control of an environment once initial access is obtained.
+Privilege escalation to SYSTEM level demonstrates complete compromise of the target system, highlighting how attackers can gain full control of infrastructure once administrative credentials are obtained.
