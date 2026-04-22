@@ -1,63 +1,77 @@
 # Attack Detection with Elastic SIEM
 
-This project focuses on detecting attacker activity within a compromised Active Directory environment using Elastic SIEM. It highlights how authentication logs can be used to identify brute force attempts and credential abuse.
+This project demonstrates how attacker activity can be detected in an Active Directory environment using Elastic SIEM.
 
 ---
 
 ## Objective
 
-Identify and analyze suspicious authentication activity using centralized logging and SIEM-based detection.
+Identify suspicious authentication activity using Windows Security logs and SIEM analysis.
 
 ---
 
 ## Lab Environment
 
-- Kali Linux attacker machine  
-- Windows Active Directory environment  
-- Elastic Stack (SIEM)  
-- Winlogbeat for log ingestion  
+- Kali Linux (attacker)
+- Windows Server (Domain Controller)
+- Elastic SIEM
+- Winlogbeat
 
 ---
 
 ## Overview
 
-Following an initial SMB brute force attack, authentication events were generated on the domain controller. These logs were ingested into Elastic SIEM, where they were analyzed to detect patterns of abnormal login activity.
+After performing authentication-based attacks, logs were collected and analyzed in Elastic SIEM.
 
-This project demonstrates how attacker behavior leaves identifiable traces within system logs, and how those traces can be leveraged for detection.
+The focus was on detecting abnormal authentication behavior using Event ID 4776 and related login activity.
 
 ---
 
 ## Detection Strategy
 
-The detection focused on identifying high volumes of credential validation events within a short time frame.
+Detection was based on identifying:
 
-Key indicators:
-- Repeated authentication attempts  
-- High frequency of Event ID 4776  
-- Consistent source host generating login requests  
+- High volumes of credential validation events  
+- Failed authentication attempts  
+- Login attempts using invalid usernames  
 
-These patterns are commonly associated with:
+These behaviors indicate:
+
 - Brute force attacks  
 - Credential spraying  
-- Unauthorized authentication attempts  
+- User enumeration  
 
 ---
 
 ## Evidence
 
 ### Credential Validation Activity (Event ID 4776)
-![Credential Validation Logs](images/credential_validation.png)
+![Credential Validation](images/credential_validation.png)
 
-A spike in credential validation events (Event ID 4776) was observed in Elastic SIEM, indicating abnormal authentication activity originating from a single source. The volume and frequency of these events are consistent with brute force or credential spraying attempts, demonstrating how authentication attacks can be identified through SIEM log analysis.
+A spike in Event ID 4776 shows repeated credential validation attempts, indicating high-volume authentication activity.
+
+---
+
+### Failed Authentication Attempts
+![Failed Authentication](images/failed_authentication.png)
+
+Filtering for failed outcomes highlights repeated unsuccessful login attempts, a strong indicator of brute force or credential spraying attacks.
+
+---
+
+### Fake User / Enumeration Attempts
+![Fake User Attempts](images/fakeuser_attempts.png)
+
+Login attempts using non-existent usernames (e.g., "fakeuser") reveal enumeration activity, where attackers probe for valid accounts.
 
 ---
 
 ## Key Findings
 
-- Authentication logs provide strong indicators of attack activity  
-- Brute force attacks generate detectable patterns in SIEM  
-- High-frequency login attempts are a reliable detection signal  
-- Centralized logging enables visibility across the environment  
+- Authentication logs clearly expose attacker behavior  
+- Failed login spikes are strong indicators of attack activity  
+- Enumeration often occurs before successful compromise  
+- SIEM tools enable rapid detection through log correlation  
 
 ---
 
@@ -72,12 +86,12 @@ A spike in credential validation events (Event ID 4776) was observed in Elastic 
 ## Skills Demonstrated
 
 - SIEM log analysis  
-- Threat detection and pattern recognition  
-- Windows event log analysis  
-- Understanding of authentication-based attacks  
+- Detection of brute force and credential attacks  
+- Windows event log investigation  
+- Threat pattern recognition  
 
 ---
 
 ## Impact
 
-This project demonstrates how authentication attacks can be detected through log analysis, highlighting the importance of monitoring and correlating security events to identify malicious activity early.
+This project shows how authentication attacks can be detected early using log analysis and SIEM visibility, enabling faster response to potential compromises.
