@@ -48,7 +48,7 @@ These patterns are commonly associated with:
 ### Credential Validation Activity (Event ID 4776)
 ![Credential Validation Logs](images/credential_validation.png)
 
-A spike in credential validation events (Event ID 4776) was observed in Elastic SIEM, indicating abnormal authentication behavior. The volume and timing of these events are consistent with brute force or credential spraying activity.
+A spike in credential validation events (Event ID 4776) was observed in Elastic SIEM, indicating abnormal authentication activity originating from a single source. The volume and frequency of these events are consistent with brute force or credential spraying attempts, demonstrating how authentication attacks can be identified through SIEM log analysis.
 
 ---
 
