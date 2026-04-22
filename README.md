@@ -11,6 +11,11 @@ The projects simulate real-world attack scenarios, covering the full workflow fr
 
 ---
 
+## 📁 Projects Portfolio
+👉 [View All Projects](./projects)
+
+---
+
 ## Featured Projects
 
 ### 🔴 SMB Brute Force Attack – Initial Access
