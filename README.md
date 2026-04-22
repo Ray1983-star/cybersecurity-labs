@@ -1,13 +1,13 @@
 # Cybersecurity Portfolio – Offensive Security Labs
 
-Hands-on cybersecurity labs focused on penetration testing, attack simulation, and real-world exploitation techniques.
+Hands-on offensive security labs focused on initial access, lateral movement, privilege escalation, and attack detection.
 
 ---
 
 ## About
 This repository documents my practical cybersecurity work, focused on offensive security and penetration testing.
 
-The projects simulate real-world attack scenarios, covering the full workflow from reconnaissance and enumeration to exploitation and initial access.
+The projects simulate real-world attack scenarios across the offensive lifecycle, from reconnaissance and initial access to lateral movement, privilege escalation, and detection
 
 ---
 
