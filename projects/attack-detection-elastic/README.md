@@ -1,68 +1,83 @@
-# Attack Detection & Log Analysis (Elastic SIEM)
+# Attack Detection with Elastic SIEM
+
+This project focuses on detecting attacker activity within a compromised Active Directory environment using Elastic SIEM. It highlights how authentication logs can be used to identify brute force attempts and credential abuse.
+
+---
 
 ## Objective
-Detect attacker activity within a compromised environment using Windows Security logs and Elastic SIEM, focusing on authentication abuse, lateral movement, and privilege escalation.
+
+Identify and analyze suspicious authentication activity using centralized logging and SIEM-based detection.
+
+---
 
 ## Lab Environment
-- Windows Domain Controller (HYDRA-DC)
-- Windows target systems
-- Kali Linux attacker machine
-- Elastic Stack (Elasticsearch, Kibana, Winlogbeat)
+
+- Kali Linux attacker machine  
+- Windows Active Directory environment  
+- Elastic Stack (SIEM)  
+- Winlogbeat for log ingestion  
+
+---
 
 ## Overview
-Following a simulated attack involving SMB brute force, credential reuse, and privilege escalation, log data was analyzed in Elastic SIEM to identify indicators of compromise and detect attacker behavior across the network.
+
+Following an initial SMB brute force attack, authentication events were generated on the domain controller. These logs were ingested into Elastic SIEM, where they were analyzed to detect patterns of abnormal login activity.
+
+This project demonstrates how attacker behavior leaves identifiable traces within system logs, and how those traces can be leveraged for detection.
+
+---
 
 ## Detection Strategy
-Detection focused on identifying abnormal authentication patterns and suspicious account activity using Windows Event Logs.
 
-### Key Events Monitored
-- **4624** – Successful logon
-- **4625** – Failed logon (brute force attempts)
-- **4672** – Special privileges assigned (Administrator login)
-- **4776** – Credential validation events
+The detection focused on identifying high volumes of credential validation events within a short time frame.
 
-## Attack Detection Workflow
-- Identified multiple failed login attempts (brute force activity)
-- Detected successful authentication following failures
-- Observed repeated logins across multiple hosts
-- Detected privileged account usage
-- Correlated events to confirm lateral movement and escalation
+Key indicators:
+- Repeated authentication attempts  
+- High frequency of Event ID 4776  
+- Consistent source host generating login requests  
+
+These patterns are commonly associated with:
+- Brute force attacks  
+- Credential spraying  
+- Unauthorized authentication attempts  
+
+---
 
 ## Evidence
 
-### Brute Force & Authentication Activity (Event ID 4776)
-![Authentication Logs](images/authentication.png)
+### Credential Validation Activity (Event ID 4776)
+![Credential Validation Logs](images/credential_validation.png)
 
-Multiple credential validation attempts were observed, indicating repeated authentication attempts consistent with brute force activity.
+A spike in credential validation events (Event ID 4776) was observed in Elastic SIEM, indicating abnormal authentication behavior. The volume and timing of these events are consistent with brute force or credential spraying activity.
 
-### Successful Logon & Lateral Movement (Event ID 4624)
-![Successful Logon](images/logon.png)
-
-Successful logins from the same account across multiple systems confirmed lateral movement using compromised credentials.
-
-### Privileged Access Detection (Event ID 4672)
-![Privilege Escalation](images/privileges.png)
-
-Special privileges assigned to the account indicate administrative access, confirming privilege escalation within the environment.
+---
 
 ## Key Findings
-- Brute force activity is visible through repeated authentication failures
-- Successful login patterns following failures indicate credential compromise
-- Lateral movement can be identified through logins across multiple hosts
-- Privileged logins provide strong indicators of escalation
-- Correlating multiple event types is critical for accurate detection
+
+- Authentication logs provide strong indicators of attack activity  
+- Brute force attacks generate detectable patterns in SIEM  
+- High-frequency login attempts are a reliable detection signal  
+- Centralized logging enables visibility across the environment  
+
+---
 
 ## Tools Used
-- Elastic SIEM (Kibana)
-- Winlogbeat
-- Windows Event Logs
+
+- Elastic SIEM  
+- Winlogbeat  
+- Windows Security Logs  
+
+---
 
 ## Skills Demonstrated
-- SIEM log analysis
-- Threat detection
-- Event correlation
-- Identification of attack patterns
-- Blue team investigation techniques
+
+- SIEM log analysis  
+- Threat detection and pattern recognition  
+- Windows event log analysis  
+- Understanding of authentication-based attacks  
+
+---
 
 ## Impact
-Attack activity was successfully detected and reconstructed using log data, demonstrating how SIEM solutions can identify and track attacker behavior from initial access through to privilege escalation.
+
+This project demonstrates how authentication attacks can be detected through log analysis, highlighting the importance of monitoring and correlating security events to identify malicious activity early.
