@@ -1,6 +1,6 @@
 # Attack Detection with Elastic SIEM
 
-This project demonstrates how attacker activity can be detected in an Active Directory environment using Elastic SIEM.
+This project demonstrates how offensive activity generated during lab attacks can be identified in an Active Directory environment using Elastic SIEM.
 
 ---
 
