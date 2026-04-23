@@ -81,6 +81,40 @@ Demonstration of privilege escalation techniques leading to domain-level access.
 
 ---
 
+## 🗝️ Credential Dumping – Pass-the-Hash
+
+Post-exploitation credential extraction and lateral movement using Pass-the-Hash.
+
+**Focus:**
+- Credential dumping with Mimikatz
+- Pass-the-Hash authentication with Impacket
+- SYSTEM-level remote access
+- Detection validation in Elastic
+
+👉 [View Project](./credential-dumping)
+
+---
+
+## 🩸 AD Attack Path Analysis – BloodHound
+
+Active Directory attack path analysis using BloodHound to map misconfigurations and identify privilege escalation paths to Domain Admin.
+
+**Focus:**
+- Active Directory data collection with SharpHound
+- Graph-based attack path analysis with BloodHound
+- ADCS escalation path identification (ESC1 + ESC4)
+- DCSync rights enumeration
+- Correlation of attack paths with real-world exploitation
+
+**Tools Used:**
+- BloodHound Community Edition
+- SharpHound
+- Kali Linux
+
+👉 [View Project](./ad-attack-path-bloodhound)
+
+---
+
 ## 🧰 Core Skills Demonstrated
 
 - SIEM log analysis (Elastic)
@@ -89,6 +123,9 @@ Demonstration of privilege escalation techniques leading to domain-level access.
 - Network enumeration & exploitation
 - Attack pattern recognition
 - Security monitoring & detection engineering
+- Active Directory attack path analysis
+- ADCS vulnerability identification
+- DCSync rights enumeration
 
 ---
 
@@ -96,11 +133,12 @@ Demonstration of privilege escalation techniques leading to domain-level access.
 
 These projects are part of a structured offensive security learning path, covering:
 
-1. Reconnaissance  
-2. Enumeration  
-3. Initial Access  
-4. Post-Exploitation  
-5. Detection & Analysis  
+1. Reconnaissance
+2. Enumeration
+3. Initial Access
+4. Post-Exploitation
+5. Detection & Analysis
+6. Attack Path Analysis
 
 Each project builds on the previous to simulate real-world attack workflows.
 
