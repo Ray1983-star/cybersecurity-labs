@@ -54,15 +54,12 @@ All foundational labs and step-by-step exercises are available in the `/labs` di
 ---
 
 ## Focus Areas
-- Penetration Testing  
-- Network Enumeration  
-- Exploitation Techniques  
-- Initial Access  
-- Security Analysis  
+- Penetration Testing
+- Active Directory Security
+- Network Enumeration
+- Privilege Escalation
+- Lateral Movement
+- Attack Path Analysis
+- Security Detection & Log Analysis
 
 ---
-
-## Next Steps
-- Expanding into lateral movement simulations  
-- Privilege escalation techniques  
-- Advanced attack scenarios  
