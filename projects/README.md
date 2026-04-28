@@ -86,7 +86,7 @@ Full penetration test against a real home network environment using Kali Linux 2
 - Searchsploit
 - Kali Linux 2025.4
 - TP-Link Tether
- [View Project](./Home-Network-Penetration-Test)
+ [View Project](./home-network-penetration-test)
 ---
 ## Core Skills Demonstrated
 - SIEM log analysis (Elastic)
