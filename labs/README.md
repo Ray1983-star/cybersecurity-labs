@@ -17,6 +17,7 @@ It also includes detection and validation using Windows Security logs and the El
 - Detection using Elastic SIEM (Event IDs 4624, 4672, etc.)
 - Correlation of attacker behavior through log analysis
 - Attack path analysis and misconfiguration mapping using BloodHound
+- Real-world home network penetration test with full remediation
 
 ---
 
@@ -25,6 +26,8 @@ It also includes detection and validation using Windows Security logs and the El
 A low-privileged foothold was escalated to full Domain Administrator access through credential discovery, privilege escalation, and lateral movement across multiple systems.
 
 BloodHound analysis confirmed the attack paths and identified additional critical vulnerabilities including ADCS escalation paths and DCSync rights misconfigurations.
+
+A standalone home network penetration test was also conducted, identifying multiple vulnerabilities across two routers and applying full remediation including firmware updates, service hardening, and credential hygiene.
 
 ---
 
@@ -71,6 +74,7 @@ This lab demonstrates a complete attack chain:
 5. Domain Compromise
 6. Detection & Log Analysis
 7. Attack Path Analysis (BloodHound)
+8. Home Network Penetration Test & Remediation
 
 ---
 
@@ -89,6 +93,7 @@ Each phase of the attack lifecycle is documented below:
 9. [Project 9 – Log Validation & Detection](./Project-9-Log-Validation-SMB)
 10. [Project 10 – Credential Access, Pass-the-Hash, and Detection Validation](./Project-10-Credential-Access-Pass-the-Hash-Detection)
 11. [Project 11 – Active Directory Attack Path Analysis (BloodHound)](./Project-11-Active-Directory-Attack-Path-Analysis-BloodHound)
+12. [Project 12 – Home Network Penetration Test](./Project-12-Home-Network-Penetration-Test)
 
 ---
 
@@ -105,6 +110,10 @@ Each phase of the attack lifecycle is documented below:
 - Active Directory Attack Path Analysis (BloodHound)
 - ADCS Vulnerability Identification
 - DCSync Rights Enumeration
+- Network Scanning & Service Enumeration
+- CVE Research & Vulnerability Analysis
+- Router Hardening & Firmware Management
+- Remediation Verification
 
 ---
 
@@ -117,6 +126,8 @@ Each phase of the attack lifecycle is documented below:
 - Absence of account lockout policies enabled brute-force attacks
 - ADCS misconfiguration enabled certificate-based privilege escalation
 - DCSync rights assigned to over-privileged groups enabled domain-wide hash extraction
+- UPnP enabled on home router running outdated MiniUPnP 1.8 with known CVEs
+- Outdated SSH service (Dropbear 2019.78) exposed on non-standard port
 
 ---
 
@@ -162,6 +173,8 @@ This level of access would allow an attacker to:
 - Audit and remediate ADCS certificate template permissions
 - Remove DCSync rights from all groups except Domain Controllers
 - Enable Credential Guard to protect credentials in memory
+- Disable UPnP on home and enterprise routers unless explicitly required
+- Keep router firmware updated and enable automatic updates
 
 ---
 
@@ -184,4 +197,6 @@ From a defensive perspective, it validates how attacker activity can be detected
 
 BloodHound analysis adds a third dimension — mapping the exact misconfigurations and attack paths that made the compromise possible, and identifying additional vulnerabilities such as ADCS escalation paths and DCSync rights misconfigurations that would allow further exploitation.
 
-By combining attack execution, detection analysis, and attack path mapping, this lab demonstrates a complete understanding of both attacker tradecraft and the defender capabilities required to identify, respond to, and remediate a domain compromise.
+Project 12 extends the scope beyond the lab environment into a real-world home network assessment, demonstrating the ability to apply penetration testing methodology against live infrastructure and carry out full remediation.
+
+By combining attack execution, detection analysis, attack path mapping, and real-world network assessment, this lab demonstrates a complete understanding of both attacker tradecraft and the practical skills required to identify, remediate, and document security vulnerabilities.
