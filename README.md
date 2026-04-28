@@ -12,15 +12,15 @@ The projects simulate real-world attack scenarios across the offensive lifecycle
 
 ---
 
-## 📁 Projects Portfolio
+## Projects Portfolio
 
-👉 [View All Projects](./projects)
+ [View All Projects](./projects)
 
 ---
 
 ## Featured Projects
 
-### 🩸 AD Attack Path Analysis – BloodHound
+### AD Attack Path Analysis – BloodHound
 
 Used BloodHound to map the MARVEL.LOCAL Active Directory environment and identify hidden attack paths to Domain Admin. Findings directly correlated with attacks performed across the full project series.
 
@@ -30,11 +30,11 @@ Used BloodHound to map the MARVEL.LOCAL Active Directory environment and identif
 - DCSync rights enumeration
 - Offensive and defensive security reasoning
 
-➡️ [View Project](./projects/ad-attack-path-bloodhound)
+ [View Project](./projects/ad-attack-path-bloodhound)
 
 ---
 
-### 🗝️ Credential Access & Pass-the-Hash Detection
+### Credential Access & Pass-the-Hash Detection
 
 Extracted credentials from memory using Mimikatz, performed lateral movement via Pass-the-Hash using Impacket, and validated detection using Elastic SIEM.
 
@@ -44,11 +44,11 @@ Extracted credentials from memory using Mimikatz, performed lateral movement via
 - SYSTEM-level remote execution
 - SIEM detection validation
 
-➡️ [View Project](./projects/credential-dumping)
+ [View Project](./projects/credential-dumping)
 
 ---
 
-### 🔴 SMB Brute Force Attack – Initial Access
+### SMB Brute Force Attack – Initial Access
 
 Simulated a real-world attack where weak SMB credentials were exploited to gain unauthorized access to a target system.
 
@@ -57,7 +57,7 @@ Simulated a real-world attack where weak SMB credentials were exploited to gain 
 - Credential brute forcing
 - Initial access techniques
 
-➡️ [View Project](./projects/smb-brute-force-attack)
+ [View Project](./projects/smb-brute-force-attack)
 
 ---
 
@@ -88,7 +88,7 @@ Simulated a real-world attack where weak SMB credentials were exploited to gain 
 
 All foundational labs and step-by-step exercises are available in the `/labs` directory.
 
-➡️ [View Labs](./labs)
+ [View Labs](./labs)
 
 ---
 
