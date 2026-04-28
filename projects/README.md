@@ -1,4 +1,4 @@
-# 📁 Cybersecurity Projects Portfolio
+# Cybersecurity Projects Portfolio
 
 A collection of hands-on offensive security projects demonstrating initial access, post-exploitation, privilege escalation, and supporting detection analysis.
 
@@ -6,7 +6,7 @@ Each project simulates real-world attack scenarios and includes methodology, too
 
 ---
 
-## 🔍 Attack Detection with Elastic SIEM
+## Attack Detection with Elastic SIEM
 
 Detection of authentication-based attacks using Windows Security Logs and Elastic SIEM.
 
@@ -20,11 +20,11 @@ Detection of authentication-based attacks using Windows Security Logs and Elasti
 - Credential spraying analysis
 - Log correlation in SIEM
 
-👉 [View Project](./attack-detection-elastic)
+ [View Project](./attack-detection-elastic)
 
 ---
 
-## 💥 SMB Brute Force Attack – Initial Access
+## SMB Brute Force Attack – Initial Access
 
 Simulated brute force attack against SMB services to gain unauthorized access.
 
@@ -38,11 +38,11 @@ Simulated brute force attack against SMB services to gain unauthorized access.
 - Nmap
 - SMB enumeration tools
 
-👉 [View Project](./smb-brute-force-attack)
+ [View Project](./smb-brute-force-attack)
 
 ---
 
-## 🧠 Suspicious Logon Detection
+## Suspicious Logon Detection
 
 Analysis of abnormal login patterns and suspicious authentication behavior.
 
@@ -51,11 +51,11 @@ Analysis of abnormal login patterns and suspicious authentication behavior.
 - Detection of unusual login activity
 - Behavioral analysis of authentication logs
 
-👉 [View Project](./suspicious-logon-detection)
+ [View Project](./suspicious-logon-detection)
 
 ---
 
-## 🔄 Lateral Movement Simulation
+## Lateral Movement Simulation
 
 Simulation of attacker movement across systems after initial compromise.
 
@@ -64,11 +64,11 @@ Simulation of attacker movement across systems after initial compromise.
 - Credential reuse
 - Post-exploitation techniques
 
-👉 [View Project](./lateral-movement-simulation)
+ [View Project](./lateral-movement-simulation)
 
 ---
 
-## 🔐 Privilege Escalation – Domain Compromise
+## Privilege Escalation – Domain Compromise
 
 Demonstration of privilege escalation techniques leading to domain-level access.
 
@@ -77,11 +77,11 @@ Demonstration of privilege escalation techniques leading to domain-level access.
 - Domain compromise techniques
 - Attack chain progression
 
-👉 [View Project](./privilege-escalation-domain-compromise)
+ [View Project](./privilege-escalation-domain-compromise)
 
 ---
 
-## 🗝️ Credential Dumping – Pass-the-Hash
+## Credential Dumping – Pass-the-Hash
 
 Post-exploitation credential extraction and lateral movement using Pass-the-Hash.
 
@@ -91,11 +91,11 @@ Post-exploitation credential extraction and lateral movement using Pass-the-Hash
 - SYSTEM-level remote access
 - Detection validation in Elastic
 
-👉 [View Project](./credential-dumping)
+ [View Project](./credential-dumping)
 
 ---
 
-## 🩸 AD Attack Path Analysis – BloodHound
+## AD Attack Path Analysis – BloodHound
 
 Active Directory attack path analysis using BloodHound to map misconfigurations and identify privilege escalation paths to Domain Admin.
 
@@ -111,11 +111,11 @@ Active Directory attack path analysis using BloodHound to map misconfigurations 
 - SharpHound
 - Kali Linux
 
-👉 [View Project](./ad-attack-path-bloodhound)
+ [View Project](./ad-attack-path-bloodhound)
 
 ---
 
-## 🧰 Core Skills Demonstrated
+## Core Skills Demonstrated
 
 - SIEM log analysis (Elastic)
 - Windows Event Log investigation
@@ -129,7 +129,7 @@ Active Directory attack path analysis using BloodHound to map misconfigurations 
 
 ---
 
-## 🚀 Notes
+## Notes
 
 These projects are part of a structured offensive security learning path, covering:
 
