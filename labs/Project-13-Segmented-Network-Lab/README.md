@@ -149,6 +149,8 @@ The default WAN ruleset blocks all inbound traffic from untrusted external netwo
 ![pfSense LAN Rules Default](images/pfsense_lan_rules_default.png)
 <br>**Figure 13.15** — Default pfSense LAN rules with anti-lockout rule and default allow rules for internal outbound traffic.
 
+---
+
 A selective allow rule was added to the WAN interface to simulate a common real-world misconfiguration:
 
 | Interface | Action | Source | Destination | Protocol | Description |
