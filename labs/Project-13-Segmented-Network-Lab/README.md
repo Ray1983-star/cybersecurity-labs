@@ -53,6 +53,7 @@ The lab was redesigned from a flat internal network into a segmented enterprise-
 ![Lab Architecture Diagram](images/lab_architecture_diagram.png)
 **Figure 13.1** — Segmented lab architecture showing Kali Linux, pfSense, DC:1, and the isolated MARVEL.local internal network.
 
+---
 
 ![VMware Network Editor](images/vmware_network_editor.png)
 **Figure 13.2** — VMware Virtual Network Editor showing VMnet2 configured as the DMZ network (10.10.10.0) and VMnet1 as the isolated internal Active Directory network (192.168.208.0).
