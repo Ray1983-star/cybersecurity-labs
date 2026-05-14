@@ -98,7 +98,6 @@ The LAN interface was configured with a static IP and DHCP range using the pfSen
 The DC:1 VulnHub virtual machine was imported into VMware Workstation and placed on the VMnet2 DMZ segment as an externally reachable target system.
 
 ![DC:1 OVF Import Warning](images/dc1_ovf_import_warning.png)
-
 **Figure 13.7** — VMware OVF compliance warning encountered while importing the DC:1 VulnHub appliance.
 
 ---
