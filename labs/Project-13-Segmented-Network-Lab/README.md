@@ -51,12 +51,14 @@ The lab was redesigned from a flat internal network into a segmented enterprise-
 | NAT (Internet) | 192.0.0.0/24 | VMnet8 | Kali eth0 (NAT — internet access only) |
 
 ![Lab Architecture Diagram](images/lab_architecture_diagram.png)
+
 **Figure 13.1** — Segmented lab architecture showing Kali Linux, pfSense, DC:1, and the isolated MARVEL.local internal network.
 
----
-
 ![VMware Network Editor](images/vmware_network_editor.png)
+
 **Figure 13.2** — VMware Virtual Network Editor showing VMnet2 configured as the DMZ network (10.10.10.0) and VMnet1 as the isolated internal Active Directory network (192.168.208.0).
+
+The Kali Linux attacker machine is dual-homed: internet access via NAT on eth0 and DMZ access via VMnet2 on eth1. Kali is positioned as an external attacker with access to the DMZ segment but has no direct access to the internal Active Directory network.
 
 ---
 
@@ -70,17 +72,21 @@ pfSense CE 2.7.2 was deployed as the boundary firewall with two network adapters
 | LAN (em1) | VMnet1 | 192.168.208.1/24 | Internal AD Network |
 
 ![pfSense VM Settings](images/pfsense_vm_settings.png)
+
 **Figure 13.3** — pfSense virtual machine settings confirming dual network adapters assigned to VMnet2 (WAN) and VMnet1 (LAN).
 
 The LAN interface was configured with a static IP and DHCP range using the pfSense console:
 
 ![pfSense Console Interface Config](images/pfsense_console_interface_config.png)
+
 **Figure 13.4** — pfSense console with option 2 selected to configure interface IP addresses.
 
 ![pfSense Console LAN Selection](images/pfsense_console_lan_selection.png)
+
 **Figure 13.5** — pfSense console confirming LAN interface selection for IP address configuration.
 
 ![pfSense LAN IP and DHCP](images/pfsense_lan_ip_dhcp.png)
+
 **Figure 13.6** — pfSense LAN interface configured with IP address 192.168.208.1 and DHCP range 192.168.208.100–200.
 
 ---
@@ -89,12 +95,12 @@ The LAN interface was configured with a static IP and DHCP range using the pfSen
 
 The DC:1 VulnHub virtual machine was imported into VMware Workstation and placed on the VMnet2 DMZ segment as an externally reachable target system.
 
-
 ![DC:1 OVF Import Warning](images/dc1_ovf_import_warning.png)
+
 **Figure 13.7** — VMware OVF compliance warning encountered while importing the DC:1 VulnHub appliance.
 
-
 ![DC:1 Imported into VMware](images/dc1_imported_vmware.png)
+
 **Figure 13.8** — DC:1 successfully imported into VMware Workstation and deployed onto the DMZ segment.
 
 ---
@@ -108,6 +114,7 @@ The Kali Linux attacker machine retained its NAT adapter for internet access whi
 An ARP scan was performed from Kali to confirm active systems on the DMZ segment and verify DC:1 was reachable at 10.10.10.130.
 
 ![Kali ARP Scan DMZ](images/kali_arp_scan_dmz.png)
+
 **Figure 13.10** — ARP scan from Kali Linux confirming active hosts on the DMZ network including pfSense and DC:1.
 
 ---
@@ -117,12 +124,15 @@ An ARP scan was performed from Kali to confirm active systems on the DMZ segment
 By default, pfSense blocks management access from the WAN interface. Packet filtering was temporarily disabled using `pfctl -d` from the console shell to gain initial WebGUI access from the DMZ segment. This is a lab-only step and is not appropriate outside of an isolated environment. Packet filtering was re-enabled once the management interface rule was configured correctly.
 
 ![pfSense Shell pfctl](images/pfsense_shell_pfctl.png)
+
 **Figure 13.11** — pfSense console shell accessed via option 8, ready to accept commands including pfctl -d to disable the packet filter.
 
 ![pfSense WebGUI Wizard](images/pfsense_webgui_wizard.png)
+
 **Figure 13.12** — pfSense WebGUI setup wizard successfully accessed from Kali at http://10.10.10.129.
 
 ![pfSense Dashboard](images/pfsense_dashboard.png)
+
 **Figure 13.13** — pfSense dashboard confirming both WAN (10.10.10.129) and LAN (192.168.208.1) interfaces are operational.
 
 ---
@@ -132,9 +142,11 @@ By default, pfSense blocks management access from the WAN interface. Packet filt
 The default WAN ruleset blocks all inbound traffic from untrusted external networks unless explicit pass rules are created.
 
 ![pfSense WAN Rules Default](images/pfsense_wan_rules_default.png)
+
 **Figure 13.14** — Default pfSense WAN rules blocking RFC 1918 private networks and bogon addresses with no pass rules defined.
 
 ![pfSense LAN Rules Default](images/pfsense_lan_rules_default.png)
+
 **Figure 13.15** — Default pfSense LAN rules with anti-lockout rule and default allow rules for internal outbound traffic.
 
 A selective allow rule was added to the WAN interface to simulate a common real-world misconfiguration:
@@ -144,6 +156,7 @@ A selective allow rule was added to the WAN interface to simulate a common real-
 | WAN | Pass | 10.10.10.130 | 192.168.208.0/24 | TCP | Selective allow — DC:1 to internal (lab misconfiguration) |
 
 ![pfSense WAN Allow Rule DC:1](images/pfsense_wan_allow_rule_dc1.png)
+
 **Figure 13.16** — Applied WAN firewall rule confirming DC:1 has TCP access to the internal network. This misconfigured rule is intentionally retained as the starting point for future exploitation exercises.
 
 This rule creates a potential pivot path from DC:1 into the internal Active Directory environment. Exploitation and validation of this path will be performed in future projects.
